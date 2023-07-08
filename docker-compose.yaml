@@ -1,6 +1,7 @@
 services:
   go:
     build: .
+    command: /bin/sh -c "while sleep 1000; do :; done"
     user: 1000:1000
     volumes:
       - ./:/home/godev/go-test

@@ -1,4 +1,4 @@
-FROM golang:1.20 as base
+FROM golang:1.20
 
 RUN useradd -ms /bin/bash godev && chown -R godev:godev /go
 USER godev
