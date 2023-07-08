@@ -1,0 +1,7 @@
+services:
+  go:
+    build: .
+    user: 1000:1000
+    volumes:
+      - ./:/home/godev/go-test
+    working_dir: /home/godev/go-test
