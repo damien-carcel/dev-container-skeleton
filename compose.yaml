@@ -1,8 +1,12 @@
 services:
-  go:
-    build: .
-    command: /bin/sh -c "while sleep 1000; do :; done"
-    user: 1000:1000
+  devcontainer:
+    build: ./docker/devcontainer
+    command:
+      - sleep
+      - infinity
+    user: devcontainer
     volumes:
-      - ./:/home/godev/go-test
-    working_dir: /home/godev/go-test
+      - type: bind
+        source: .
+        target: /srv/app
+    working_dir: /srv/app
