@@ -8,6 +8,7 @@
         "eamodio.gitlens",
         "ms-azuretools.vscode-docker",
         "redhat.vscode-yaml",
+        "streetsidesoftware.code-spell-checker",
         "task.vscode-task",
         "yzhang.markdown-all-in-one"
       ]
@@ -19,5 +20,5 @@
   "name": "Dev Container Skeleton",
   "remoteUser": "devcontainer",
   "service": "devcontainer",
-  "workspaceFolder": "/srv/app"
+  "workspaceFolder": "/app"
 }

@@ -1,6 +1,7 @@
 services:
   devcontainer:
-    build: ./docker/devcontainer
+    build:
+      context: ./docker/devcontainer
     command:
       - sleep
       - infinity
@@ -8,5 +9,5 @@ services:
     volumes:
       - type: bind
         source: .
-        target: /srv/app
-    working_dir: /srv/app
+        target: /app
+    working_dir: /app
