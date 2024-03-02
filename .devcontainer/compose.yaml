@@ -1,0 +1,12 @@
+services:
+  devcontainer:
+    build:
+      context: ../docker/devcontainer
+    command:
+      - sleep
+      - infinity
+    volumes:
+      - type: bind
+        source: ..
+        target: /app
+    working_dir: /app
