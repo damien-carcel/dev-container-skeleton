@@ -21,7 +21,12 @@
   "features": {
     "ghcr.io/devcontainers/features/docker-in-docker:2": {}
   },
+  "initializeCommand": "./.devcontainer/setup.sh",
+  "postCreateCommand": "task dependencies:install",
   "name": "Dev Container Skeleton",
+  "runServices": [
+    "dev"
+  ],
   "service": "devcontainer",
   "workspaceFolder": "/app"
 }

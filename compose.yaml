@@ -1,3 +1,21 @@
 services:
-  app:
-    image: debian:12-slim
+  dev:
+    command:
+      - npm
+      - run
+      - dev
+    expose:
+      - 5173
+    image: node:lts-slim
+    ports:
+      - 8000:8000
+    volumes:
+      - type: bind
+        source: .
+        target: /app
+      - type: bind
+        source: ~/.npm
+        target: /home/node/.npm
+    tty: true
+    user: node
+    working_dir: /app

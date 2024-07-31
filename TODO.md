@@ -1,0 +1,2 @@
+- Make it work with Dev Containers
+- Add static analysis (prettier and ESLint)

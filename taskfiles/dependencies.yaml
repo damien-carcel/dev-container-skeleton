@@ -1,0 +1,9 @@
+version: 3
+
+tasks:
+  install:
+    aliases:
+      - i
+    cmds:
+      - docker compose run --rm dev npm install
+    desc: Install dependencies
