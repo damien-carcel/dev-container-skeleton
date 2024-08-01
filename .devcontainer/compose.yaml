@@ -11,5 +11,5 @@ services:
         target: /app
       - type: bind
         source: ~/.npm
-        target: /home/node/.npm
+        target: /home/vscode/.npm
     working_dir: /app

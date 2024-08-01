@@ -15,18 +15,22 @@
     }
   },
   "dockerComposeFile": [
-    "./compose.yaml",
-    "../compose.yaml"
+    "./compose.yaml"
   ],
   "features": {
     "ghcr.io/devcontainers/features/docker-in-docker:2": {}
   },
-  "initializeCommand": "./.devcontainer/setup.sh",
-  "postCreateCommand": "task dependencies:install",
-  "name": "Dev Container Skeleton",
-  "runServices": [
-    "dev"
+  "forwardPorts": [
+    8000
   ],
+  "initializeCommand": "./.devcontainer/setup.sh",
+  "portsAttributes": {
+    "8000": {
+      "label": "Vite Dev server"
+    }
+  },
+  "postCreateCommand": "task app:dev",
+  "name": "Dev Container Skeleton",
   "service": "devcontainer",
   "workspaceFolder": "/app"
 }

@@ -1,2 +1,5 @@
-- Make it work with Dev Containers
-- Add static analysis (prettier and ESLint)
+- Add static analysis
+  - Add NodeJS feature
+  - Install Prettier and ESLint
+- Configure CircleCi
+- Configure Netlify
