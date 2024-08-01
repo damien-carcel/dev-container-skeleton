@@ -1,0 +1,62 @@
+version: '3'
+
+tasks:
+  static:prettier:check:
+    desc: Check the code style
+    cmds:
+      - yarn prettier --check
+    aliases: [p:c]
+
+  static:prettier:fix:
+    desc: Fix the code style
+    cmds:
+      - yarn prettier --write
+    aliases: [p:f]
+
+  static:css:lint:
+    desc: Lint the stylesheets
+    cmds:
+      - yarn stylelint
+    aliases: [c:l]
+
+  static:css:fix:
+    desc: Fix the stylesheets
+    cmds:
+      - yarn stylelint --fix
+    aliases: [c:f]
+
+  static:js:lint:
+    desc: Lint the application code
+    cmds:
+      - yarn lint {{.CLI_ARGS}}
+    aliases: [j:l]
+
+  static:js:fix:
+    desc: Fix the application code
+    cmds:
+      - yarn lint --fix
+    aliases: [j:f]
+
+  all:
+    desc: Execute all the tests
+    cmds:
+      - echo ""
+      - echo "|----------------------|"
+      - echo "| Check the code style |"
+      - echo "|----------------------|"
+      - echo ""
+      - task: static:prettier:check
+      - echo ""
+      - echo "|----------------------|"
+      - echo "| Lint the stylesheets |"
+      - echo "|----------------------|"
+      - echo ""
+      - task: static:css:lint
+      - echo ""
+      - echo "|---------------------------|"
+      - echo "| Lint the application code |"
+      - echo "|---------------------------|"
+      - echo ""
+      - task: static:js:lint
+      - echo ""
+    aliases: [a]

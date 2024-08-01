@@ -1,4 +1,2 @@
-- Add static analysis
-  - Install Prettier and ESLint
 - Configure CircleCi
 - Configure Netlify
