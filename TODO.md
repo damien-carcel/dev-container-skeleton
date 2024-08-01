@@ -1,2 +1,2 @@
-- Configure CircleCi
 - Configure Netlify
+- Add missing task commands

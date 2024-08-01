@@ -4,6 +4,8 @@ services:
       - npm
       - run
       - dev
+    environment:
+      NPM_CONFIG_CACHE: ${NPM_CONFIG_CACHE:-/home/node/.npm}
     expose:
       - 8000
     image: node:lts-slim
@@ -17,5 +19,5 @@ services:
         source: ~/.npm
         target: /home/node/.npm
     tty: true
-    user: node
+    user: ${HOST_USER_IDS:-1000:1000}
     working_dir: /app
