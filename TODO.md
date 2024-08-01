@@ -1,5 +1,4 @@
 - Add static analysis
-  - Add NodeJS feature
   - Install Prettier and ESLint
 - Configure CircleCi
 - Configure Netlify

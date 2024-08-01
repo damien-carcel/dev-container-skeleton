@@ -18,7 +18,8 @@
     "./compose.yaml"
   ],
   "features": {
-    "ghcr.io/devcontainers/features/docker-in-docker:2": {}
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {},
+    "ghcr.io/devcontainers/features/node:1": {}
   },
   "forwardPorts": [
     8000
@@ -30,7 +31,7 @@
     }
   },
   "postCreateCommand": "task app:dev",
-  "name": "Dev Container Skeleton",
+  "name": "my-app",
   "service": "devcontainer",
   "workspaceFolder": "/app"
 }
