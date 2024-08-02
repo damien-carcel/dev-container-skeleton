@@ -30,7 +30,7 @@
       "label": "Vite Dev server"
     }
   },
-  "postCreateCommand": "task app:dev",
+  "postCreateCommand": "task dependencies:install run:dev",
   "name": "my-app",
   "service": "devcontainer",
   "workspaceFolder": "/app"

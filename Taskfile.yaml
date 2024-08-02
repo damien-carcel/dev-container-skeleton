@@ -1,4 +1,4 @@
-version: '3'
+version: "3"
 
 silent: true
 
@@ -17,9 +17,3 @@ tasks:
   default:
     cmds:
       - task --list
-
-  app:dev:
-    cmds:
-      - task: dependencies:install
-      - task: run:dev
-    desc: Start the application in dev mode

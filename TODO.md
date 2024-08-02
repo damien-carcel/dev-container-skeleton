@@ -1,2 +1,1 @@
 - Configure Netlify
-- Add missing task commands
