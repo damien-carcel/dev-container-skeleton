@@ -1,62 +1,62 @@
-version: '3'
+version: "3"
 
 tasks:
-  static:prettier:check:
+  static:format:check:
     desc: Check the code style
     cmds:
       - yarn prettier --check
-    aliases: [p:c]
+    aliases: [f:c]
 
-  static:prettier:fix:
+  static:format:fix:
     desc: Fix the code style
     cmds:
       - yarn prettier --write
-    aliases: [p:f]
+    aliases: [f:f]
 
-  static:css:lint:
-    desc: Lint the stylesheets
+  static:style-sheet:lint:
+    desc: Lint the style sheets
     cmds:
       - yarn stylelint
-    aliases: [c:l]
+    aliases: [s:l]
 
-  static:css:fix:
-    desc: Fix the stylesheets
+  static:style-sheet:fix:
+    desc: Fix the style sheets
     cmds:
       - yarn stylelint --fix
-    aliases: [c:f]
+    aliases: [s:f]
 
-  static:js:lint:
+  static:code:lint:
     desc: Lint the application code
     cmds:
       - yarn lint {{.CLI_ARGS}}
-    aliases: [j:l]
+    aliases: [c:l]
 
-  static:js:fix:
+  static:code:fix:
     desc: Fix the application code
     cmds:
       - yarn lint --fix
-    aliases: [j:f]
+    aliases: [c:f]
 
   all:
     desc: Execute all the tests
     cmds:
       - echo ""
-      - echo "|----------------------|"
-      - echo "| Check the code style |"
-      - echo "|----------------------|"
+      - echo "|---------------------------|"
+      - echo "| Check the code formatting |"
+      - echo "|---------------------------|"
       - echo ""
-      - task: static:prettier:check
+      - task: static:format:check
       - echo ""
-      - echo "|----------------------|"
-      - echo "| Lint the stylesheets |"
-      - echo "|----------------------|"
+      - echo "|---------------------------|"
+      - echo "|   Lint the style sheets   |"
+      - echo "|---------------------------|"
       - echo ""
-      - task: static:css:lint
+      - task: static:style-sheet:lint
       - echo ""
       - echo "|---------------------------|"
       - echo "| Lint the application code |"
       - echo "|---------------------------|"
       - echo ""
-      - task: static:js:lint
+      - task: static:code:lint
       - echo ""
     aliases: [a]

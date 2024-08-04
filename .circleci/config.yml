@@ -37,14 +37,14 @@ jobs:
           paths:
             - ./node_modules
       - run:
-          name: Check the code style
-          command: task tests:static:prettier:check
+          name: Check the code formatting
+          command: task tests:static:format:check
       - run:
-          name: Lint the stylesheets
-          command: task tests:static:css:lint
+          name: Lint the style sheets
+          command: task tests:static:style-sheet:lint
       - run:
           name: Lint the application code
-          command: task tests:static:js:lint -- --format junit -o test_results/eslint.xml
+          command: task tests:static:code:lint -- --format junit -o test_results/eslint.xml
       - store_artifacts:
           path: test_results
       - store_test_results:
