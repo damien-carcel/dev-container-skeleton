@@ -4,13 +4,13 @@ tasks:
   static:format:check:
     desc: Check the code style
     cmds:
-      - npm run prettier --check
+      - npm run prettier -- --check
     aliases: [f:c]
 
   static:format:fix:
     desc: Fix the code style
     cmds:
-      - npm run prettier --write
+      - npm run prettier -- --write
     aliases: [f:f]
 
   static:style-sheet:lint:
@@ -22,19 +22,19 @@ tasks:
   static:style-sheet:fix:
     desc: Fix the style sheets
     cmds:
-      - npm run stylelint --fix
+      - npm run stylelint -- --fix
     aliases: [s:f]
 
   static:code:lint:
     desc: Lint the application code
     cmds:
-      - npm run lint {{.CLI_ARGS}}
+      - npm run lint -- {{.CLI_ARGS}}
     aliases: [c:l]
 
   static:code:fix:
     desc: Fix the application code
     cmds:
-      - npm run lint --fix
+      - npm run lint -- --fix
     aliases: [c:f]
 
   all:
