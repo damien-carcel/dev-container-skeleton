@@ -1,6 +1,4 @@
-.cache
-.netlify
-.next
+/dist
 /netlify/
 /node_modules
 /public
