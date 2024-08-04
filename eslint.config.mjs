@@ -9,6 +9,6 @@ export default [
     languageOptions: {
       globals: globals.browser,
     },
-    ignores: ['dist', 'node_modules', 'public'],
+    ignores: ['dist/', 'public/'],
   },
 ];

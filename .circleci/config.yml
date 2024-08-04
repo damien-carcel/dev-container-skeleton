@@ -44,7 +44,7 @@ jobs:
           command: task tests:static:style-sheet:lint
       - run:
           name: Lint the application code
-          command: task tests:static:code:lint -- --format junit -o test_results/eslint.xml
+          command: task tests:static:code:lint -- -- --format=junit -o test_results/eslint.xml
       - store_artifacts:
           path: test_results
       - store_test_results:
