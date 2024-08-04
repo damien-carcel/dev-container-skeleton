@@ -37,6 +37,12 @@ tasks:
       - npm run lint -- --fix
     aliases: [c:f]
 
+  static:types:check:
+    desc: Check the code typing
+    cmds:
+      - yarn typecheck
+    aliases: [t:c]
+
   all:
     desc: Execute all the tests
     cmds:
@@ -58,5 +64,11 @@ tasks:
       - echo "|---------------------------|"
       - echo ""
       - task: static:code:lint
+      - echo ""
+      - echo "|---------------------------|"
+      - echo "|   Check the code typing   |"
+      - echo "|---------------------------|"
+      - echo ""
+      - task: static:types:check
       - echo ""
     aliases: [a]

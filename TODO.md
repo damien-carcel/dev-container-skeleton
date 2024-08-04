@@ -1,0 +1,2 @@
+- Add Netlify functions in Go
+  - Need to install the Dev Container Go feature
