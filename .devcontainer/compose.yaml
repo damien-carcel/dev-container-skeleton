@@ -9,4 +9,7 @@ services:
       - type: bind
         source: ..
         target: /app
+      - type: bind
+        source: ~/.npm
+        target: /home/vscode/.npm
     working_dir: /app

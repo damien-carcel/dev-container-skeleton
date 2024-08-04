@@ -1,0 +1,16 @@
+version: 3
+
+tasks:
+  dev:
+    aliases:
+      - d
+    cmds:
+      - docker compose up -d --remove-orphans dev
+    desc: Run the development server
+
+  stop:
+    aliases:
+      - s
+    cmds:
+      - docker compose down -v
+    desc: Stop the containers
