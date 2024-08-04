@@ -4,43 +4,43 @@ tasks:
   static:format:check:
     desc: Check the code style
     cmds:
-      - npm run prettier -- --check
+      - docker compose run --rm front npm run prettier -- --check
     aliases: [f:c]
 
   static:format:fix:
     desc: Fix the code style
     cmds:
-      - npm run prettier -- --write
+      - docker compose run --rm front npm run prettier -- --write
     aliases: [f:f]
 
   static:style-sheet:lint:
     desc: Lint the style sheets
     cmds:
-      - npm run stylelint
+      - docker compose run --rm front npm run stylelint
     aliases: [s:l]
 
   static:style-sheet:fix:
     desc: Fix the style sheets
     cmds:
-      - npm run stylelint -- --fix
+      - docker compose run --rm front npm run stylelint -- --fix
     aliases: [s:f]
 
   static:code:lint:
     desc: Lint the application code
     cmds:
-      - npm run lint -- {{.CLI_ARGS}}
+      - docker compose run --rm front npm run lint -- {{.CLI_ARGS}}
     aliases: [c:l]
 
   static:code:fix:
     desc: Fix the application code
     cmds:
-      - npm run lint -- --fix
+      - docker compose run --rm front npm run lint -- --fix
     aliases: [c:f]
 
   static:types:check:
     desc: Check the code typing
     cmds:
-      - yarn typecheck
+      - docker compose run --rm front npm run typecheck
     aliases: [t:c]
 
   all:

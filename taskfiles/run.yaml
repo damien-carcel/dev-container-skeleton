@@ -5,8 +5,8 @@ tasks:
     aliases:
       - d
     cmds:
-      - docker compose up -d --remove-orphans dev
-    desc: Run the development server
+      - docker compose up -d --remove-orphans
+    desc: Run the application in development mode
 
   stop:
     aliases:

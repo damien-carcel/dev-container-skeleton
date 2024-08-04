@@ -6,6 +6,7 @@
         "dbaeumer.vscode-eslint",
         "eamodio.gitlens",
         "esbenp.prettier-vscode",
+        "golang.go",
         "ms-azuretools.vscode-docker",
         "redhat.vscode-yaml",
         "streetsidesoftware.code-spell-checker",
@@ -19,15 +20,22 @@
   ],
   "features": {
     "ghcr.io/devcontainers/features/docker-in-docker:2": {},
+    "ghcr.io/devcontainers/features/go:1": {
+      "version": "1.22"
+    },
     "ghcr.io/devcontainers/features/node:1": {}
   },
   "forwardPorts": [
-    8000
+    8000,
+    9999
   ],
   "initializeCommand": "./.devcontainer/setup.sh",
   "portsAttributes": {
     "8000": {
-      "label": "Vite Dev server"
+      "label": "Front-end - Vite Dev server"
+    },
+    "9999": {
+      "label": "API - Netlify functions"
     }
   },
   "postCreateCommand": "task dependencies:install run:dev",

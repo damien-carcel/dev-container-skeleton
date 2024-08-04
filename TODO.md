@@ -1,2 +1,3 @@
-- Add Netlify functions in Go
-  - Need to install the Dev Container Go feature
+- Call the go function from the counter in the front-end
+- Install and configure (including in VS Code) Go tools (static analysis, dependency management, tests, etc...)
+- Install and set up Cypress for E2E testing

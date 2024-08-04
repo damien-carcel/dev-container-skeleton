@@ -17,7 +17,7 @@ jobs:
       image: ubuntu-2204:2024.05.1
     steps:
       - checkout
-      - set_host_user_ids_environment_variable
+      - set_host_user_ids_environment_variables
       - run:
           name: Setup cache directory
           command: ./.devcontainer/setup.sh
@@ -51,10 +51,12 @@ jobs:
           path: test_results
 
 commands:
-  set_host_user_ids_environment_variable:
-    description: "Set Docker Compose HOST_USER_IDS environment variable according to the host virtual machine"
+  set_host_user_ids_environment_variables:
+    description: Set Docker Compose HOST_USER_ID, HOST_GROUP_ID, and HOST_USER_IDS environment variables according to the host virtual machine
     steps:
       - run:
-          name: Set Docker Compose HOST_USER_IDS environment variable according to the host virtual machine
+          name: Set Docker Compose HOST_USER_ID, HOST_GROUP_ID, and HOST_USER_IDS environment variables according to the host virtual machine
           command: |
+            echo 'export HOST_USER_ID="$(id -u)"' >> $BASH_ENV
+            echo 'export HOST_GROUP_ID="$(id -g)"' >> $BASH_ENV
             echo 'export HOST_USER_IDS="$(id -u):$(id -g)"' >> $BASH_ENV
