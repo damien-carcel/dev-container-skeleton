@@ -1,5 +1,5 @@
 services:
-  dev:
+  front:
     command:
       - npm
       - run
@@ -20,4 +20,30 @@ services:
         target: /home/node/.npm
     tty: true
     user: ${HOST_USER_IDS:-1000:1000}
+    working_dir: /app
+
+  api:
+    build:
+      args:
+        GROUP_ID: ${HOST_GROUP_ID:-1000}
+        USER_ID: ${HOST_USER_ID:-1000}
+      context: docker/api
+    command:
+      - netlify
+      - function:serve
+    environment:
+      NPM_CONFIG_CACHE: ${NPM_CONFIG_CACHE:-/home/node/.npm}
+    expose:
+      - 9999
+    ports:
+      - 9999:9999
+    volumes:
+      - type: bind
+        source: .
+        target: /app
+      - type: bind
+        source: ~/.npm
+        target: /home/node/.npm
+    tty: true
+    user: api
     working_dir: /app
