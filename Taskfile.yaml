@@ -3,15 +3,18 @@ version: "3"
 silent: true
 
 includes:
-  dependencies:
-    taskfile: ./taskfiles/dependencies.yaml
-    aliases: [d]
+  back:dependencies:
+    taskfile: ./taskfiles/back/dependencies.yaml
+    aliases: [b:d]
+  front:dependencies:
+    taskfile: ./taskfiles/front/dependencies.yaml
+    aliases: [f:d]
+  front:tests:
+    taskfile: ./taskfiles/front/tests.yaml
+    aliases: [f:t]
   run:
     taskfile: ./taskfiles/run.yaml
     aliases: [r]
-  tests:
-    taskfile: ./taskfiles/tests.yaml
-    aliases: [t]
 
 tasks:
   default:
