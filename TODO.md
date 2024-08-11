@@ -1,5 +1,2 @@
-- Install and configure (including in VS Code) Go tools (static analysis, dependency management, tests, etc...)
-  - Most seem already installed by the Go feature.
-  - Add GolangCI-lint as a task through Docker and run it in CircleCI
 - Call the go function from the counter in the front-end
 - Install and set up Cypress for E2E testing

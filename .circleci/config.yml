@@ -43,8 +43,11 @@ jobs:
           name: Lint the style sheets
           command: task front:tests:static:style-sheet:lint
       - run:
-          name: Lint the application code
+          name: Lint the front-end code
           command: task front:tests:static:code:lint -- --format=junit -o test_results/eslint.xml
+      - run:
+          name: Lint the API code
+          command: task back:tests:static:code:lint
       - store_artifacts:
           path: test_results
       - store_test_results:

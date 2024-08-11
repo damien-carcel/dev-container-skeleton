@@ -6,6 +6,9 @@ includes:
   back:dependencies:
     taskfile: ./taskfiles/back/dependencies.yaml
     aliases: [b:d]
+  back:tests:
+    taskfile: ./taskfiles/back/tests.yaml
+    aliases: [b:t]
   front:dependencies:
     taskfile: ./taskfiles/front/dependencies.yaml
     aliases: [f:d]
