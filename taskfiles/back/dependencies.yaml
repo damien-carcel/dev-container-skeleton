@@ -5,17 +5,18 @@ tasks:
     aliases:
       - i
     cmds:
-      - docker compose run --rm api go mod tidy
+      - docker compose run --workdir /app/api/hello --rm api go mod tidy
+      - docker compose run --workdir /app/api/hello --rm api go mod vendor
     desc: Install dependencies
 
   upgrade:
-    desc: Updates project dependencies to their latest version
-    cmds:
-      - docker compose run --rm api go get -u ./...
     aliases: [u]
+    cmds:
+      - docker compose run --workdir /app/api/hello --rm api go get -u ./...
+    desc: Updates project dependencies to their latest version
 
   outdated:
-    desc: Check for outdated project dependencies
-    cmds:
-      - docker compose run --rm api go list -u -m all
     aliases: [o]
+    cmds:
+      - docker compose run --workdir /app/api/hello --rm api go list -u -m all
+    desc: Check for outdated project dependencies

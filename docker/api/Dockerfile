@@ -1,4 +1,4 @@
-FROM golang:1.22-bookworm
+FROM golang:1.23-bookworm
 
 ARG USER_ID
 ARG GROUP_ID
