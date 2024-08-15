@@ -11,7 +11,7 @@ tasks:
   upgrade:
     desc: Updates project dependencies to their latest version
     cmds:
-      - npm update
+      - docker compose run --rm dev npm update
     preconditions:
       - sh: test -d node_modules
         msg: Cannot upgrade the dependencies if they are not already installed
@@ -20,7 +20,7 @@ tasks:
   outdated:
     desc: Check for outdated project dependencies
     cmds:
-      - npm update
+      - docker compose run --rm dev npm outdated
     preconditions:
       - sh: test -d node_modules
         msg: Cannot check for outdated dependencies if they are not already installed
